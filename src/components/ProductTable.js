@@ -1,4 +1,5 @@
 import React from 'react';
+import ProductRow from './ProductRow';
 
 export default function ProductTable({ productList }) {
   return (
@@ -12,12 +13,7 @@ export default function ProductTable({ productList }) {
         </thead>
         <tbody>
           {productList.map((elem) => {
-            return (
-              <tr key={elem.id}>
-                <td>{elem.name}</td>
-                <td>{elem.price}</td>
-              </tr>
-            );
+            return <ProductRow key={elem.id} product={elem} />;
           })}
         </tbody>
       </table>
