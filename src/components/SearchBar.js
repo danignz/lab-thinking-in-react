@@ -1,12 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 export default function SearchBar(props) {
-  const { onSearch } = props;
-  const [checked, setChecked] = useState(false);
-
-  function checkValue(argumentValue) {
-    setChecked(argumentValue);
-  }
+  const { onSearch, onCheck } = props;
 
   return (
     <>
@@ -18,7 +13,7 @@ export default function SearchBar(props) {
       />
       <input
         id="checkbox"
-        onChange={(e) => checkValue(e.target.checked)}
+        onChange={(e) => onCheck(e.target.checked)}
         type="checkbox"
       />
       <label htmlFor="#checkbox">Only show products in stock</label>
